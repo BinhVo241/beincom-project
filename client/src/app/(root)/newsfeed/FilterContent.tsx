@@ -63,7 +63,7 @@ const FilterContent: React.FC<IFilterContentProps> = ({}) => {
                 menu={{
                   items: [
                     {
-                      label: "Log out",
+                      label: "Filter",
                       key: "0",
                       onClick: async () => {},
                     },

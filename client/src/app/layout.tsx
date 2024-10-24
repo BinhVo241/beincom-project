@@ -1,10 +1,14 @@
 import ConfigProvider from "@/providers/ConfigProvider";
-import Provider from "@/providers/Provider";
 import QueryProvider from "@/providers/QueryProvider";
 import StyledComponentsRegistry from "@/providers/registry";
 import "@/styles/globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const ReduxProvider = dynamic(() => import("@/providers/Provider"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Everyone needs a place to be in | Beincom",
@@ -21,15 +25,15 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <QueryProvider>
-          <StyledComponentsRegistry>
-            <Provider>
+        <ReduxProvider>
+          <QueryProvider>
+            <StyledComponentsRegistry>
               <AntdRegistry>
                 <ConfigProvider>{children}</ConfigProvider>
               </AntdRegistry>
-            </Provider>
-          </StyledComponentsRegistry>
-        </QueryProvider>
+            </StyledComponentsRegistry>
+          </QueryProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

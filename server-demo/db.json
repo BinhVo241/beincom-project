@@ -35,6 +35,15 @@
       "lastName": "Messi",
       "createdAt": 1729084847741,
       "updatedAt": 1729084847741
+    },
+    {
+      "email": "reus@gmail.com",
+      "password": "$2a$10$pA0Ja4dwZSp6upEydZU5mu2BQbNVLtRA9xpxz49Tz2uko149haM3m",
+      "firstName": "Marco",
+      "lastName": "Reus",
+      "createdAt": 1729791899942,
+      "updatedAt": 1729791899942,
+      "id": 5
     }
   ],
   "posts": [

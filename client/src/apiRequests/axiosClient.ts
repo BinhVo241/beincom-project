@@ -1,7 +1,8 @@
+"use client";
+import { authActions } from "@/redux/auth/slice";
+import { store } from "@/redux/store";
 import { message } from "antd";
 import axios from "axios";
-import { store } from "@/redux/store";
-import { authActions } from "@/redux/auth/slice";
 import queryString from "query-string";
 
 const baseURL = process.env.NEXT_PUBLIC_API_GATEWAY_URL;
@@ -14,18 +15,6 @@ const axiosClient = axios.create({
     Accept: "application/json",
     "Content-Type": "application/json",
   },
-});
-
-axiosClient.interceptors.request.use(async (config: any) => {
-  const accessToken = "";
-
-  config.headers = {
-    Authorization: accessToken ? `Bearer ${accessToken}` : "",
-    Accept: "application/json",
-    ...config.headers,
-  };
-
-  return { ...config, data: config.data ?? null };
 });
 
 axiosClient.interceptors.response.use(
@@ -42,7 +31,9 @@ axiosClient.interceptors.response.use(
     }
 
     if (error?.response?.status === 401) {
+      // const store = typeof window !== "undefined" ? storeNew : makeStore();
       const isAuthenticated = store.getState().auth.isAuthenticated;
+
       if (isAuthenticated) {
         store.dispatch(authActions.logout());
         message.error("Session is exprired");
