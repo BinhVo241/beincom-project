@@ -53,7 +53,7 @@ const CommentsForm = React.forwardRef<any, ICommentsForProps>(
     return (
       <Form
         form={form}
-        name="commentsForm"
+        name={`commentForm_${postId}`}
         onKeyDown={(e) => {
           if (["13", "Enter"].includes(e.key)) {
             handleSendComment();

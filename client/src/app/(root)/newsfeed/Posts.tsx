@@ -46,7 +46,7 @@ const Posts: React.FC<IPostsProps> = ({ filter }) => {
     <div style={{ height: "100%" }}>
       <VirtualList
         data={(filter ? dataSearch?.pages : data?.pages) || []}
-        itemKey="id"
+        itemKey={(item) => `index_${item?.length}`}
       >
         {(item, idx) => {
           return (

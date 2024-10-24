@@ -1484,6 +1484,74 @@
       "content": "aaaa",
       "createdAt": 1729748394657,
       "id": "fTlsy_2"
+    },
+    {
+      "author": {
+        "id": 1,
+        "email": "Binhvo@gmail.com",
+        "firstName": "Binh",
+        "lastName": "Vo",
+        "createdAt": 1729084847741,
+        "updatedAt": 1729084847741
+      },
+      "userId": 1,
+      "postId": "c2c13563-f75f-48c3-9381-1eabbc4c9273",
+      "createAt": "24/10/2024",
+      "updatedAt": 1729785171423,
+      "content": "hello",
+      "createdAt": 1729785171423,
+      "id": "wV_IJhy"
+    },
+    {
+      "author": {
+        "id": 1,
+        "email": "Binhvo@gmail.com",
+        "firstName": "Binh",
+        "lastName": "Vo",
+        "createdAt": 1729084847741,
+        "updatedAt": 1729084847741
+      },
+      "userId": 1,
+      "postId": "c2c13563-f75f-48c3-9381-1eabbc4c9273",
+      "createAt": "24/10/2024",
+      "updatedAt": 1729785200201,
+      "content": "comment thu 1",
+      "createdAt": 1729785200201,
+      "id": "qci4Wmh"
+    },
+    {
+      "author": {
+        "id": 1,
+        "email": "Binhvo@gmail.com",
+        "firstName": "Binh",
+        "lastName": "Vo",
+        "createdAt": 1729084847741,
+        "updatedAt": 1729084847741
+      },
+      "userId": 1,
+      "postId": "9502cef9-79a9-4493-92a3-e4495a713fa8",
+      "createAt": "24/10/2024",
+      "updatedAt": 1729785205781,
+      "content": "comment thu 2",
+      "createdAt": 1729785205781,
+      "id": "Aigp7sf"
+    },
+    {
+      "author": {
+        "id": 1,
+        "email": "Binhvo@gmail.com",
+        "firstName": "Binh",
+        "lastName": "Vo",
+        "createdAt": 1729084847741,
+        "updatedAt": 1729084847741
+      },
+      "userId": 1,
+      "postId": "9502cef9-79a9-4493-92a3-e4495a713fa8",
+      "createAt": "24/10/2024",
+      "updatedAt": 1729785753746,
+      "content": "Yes!",
+      "createdAt": 1729785753746,
+      "id": "rJE2UNW"
     }
   ]
 }

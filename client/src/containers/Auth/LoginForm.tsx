@@ -47,7 +47,7 @@ const LoginForm: React.FC<{}> = ({}) => {
 
   const onFinish = () => {
     form.validateFields().then(async (data) => {
-      reqLogin.mutate(data);
+      await reqLogin.mutateAsync(data);
     });
   };
 

@@ -13,13 +13,13 @@ export interface ICommentItem
   className?: string;
 }
 
-const CommentItem: React.FC<ICommentItem> = function CommentsForm({
+const CommentItem: React.FC<ICommentItem> = ({
   style,
   className,
   author,
   createdAt,
   content,
-}) {
+}) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
