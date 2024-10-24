@@ -21,3 +21,6 @@
     - Providers: các Wrapper components vd như QueryClientProvider.
     - redux: global Store.
     - styles: các file css dự án(có thể đem vào assets).
+
+Đăng nhập, đăng kí sử dụng jwt để xác thực. Server sử dụng json-server-auth để cấu hình đăng nhập đăng kí.
+Dữ liệu được định nghĩa trong db.json ở server-demo.
