@@ -1,1 +1,23 @@
 # beincom-project
+
+# Hướng dẫn cài đặt:
+
+    client: npm install
+    server-demo : npm install
+    chạy lệnh start server và client để review.
+
+### Third-Party Libraries
+
+    Redux, Antd, Axios, tanstack query, Date-fns, rc-virtual-list ...
+
+# Cấu trúc dự án:
+
+    - apiRequests: Cấu hình api.
+    - app: Thư mục dự án (sử dụng app router).
+    - assets: hình ảnh icon.
+    - components: components tái sử dụng.
+    - containers: components, form chứa logic.
+    - lib: chứa folder hooks, hoc ... tái sử dụng dự án.
+    - Providers: các Wrapper components vd như QueryClientProvider.
+    - redux: global Store.
+    - styles: các file css dự án(có thể đem vào assets).
