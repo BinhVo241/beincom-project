@@ -9,6 +9,12 @@ const apiRequest = {
 
     return dataPost;
   },
+  getFilterPosts: async (content: any, pageParam: any) => {
+    const dataPost = await axiosClient.get(
+      `/posts?q=${content}&_page=${pageParam}&_limit=${DEFAULT_PAGESIZE}`
+    );
+    return dataPost;
+  },
   getComments: async (postId: number | string) =>
     await axiosClient.get(`/comments?postId=${postId}`),
   getPost: async (postId: number | string) => {

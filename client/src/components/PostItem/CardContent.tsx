@@ -2,7 +2,9 @@
 
 import { Image } from "antd";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import React from "react";
+import Highlighter from "react-highlight-words";
 
 export interface ICardContentProps {
   postId: number | string;
@@ -19,6 +21,9 @@ const CardContent: React.FC<ICardContentProps> = ({
   title,
   picture,
 }) => {
+  const search = useSearchParams();
+  const searchParam = search.get("content");
+
   return (
     <Link
       href={`/article/${postId}`}
@@ -42,9 +47,15 @@ const CardContent: React.FC<ICardContentProps> = ({
         <div className="text-lg font-semibold leading-[30px] text-neutral-60 break-word">
           {title}
         </div>
-        <div className="mt-2 text-sm font-normal text-neutral-60 break-word ">
-          {description}
-        </div>
+        <Highlighter
+          searchWords={[searchParam || ""]}
+          autoEscape={true}
+          textToHighlight={description}
+        >
+          <div className="mt-2 text-sm font-normal text-neutral-60 break-word ">
+            {description}
+          </div>
+        </Highlighter>
       </div>
     </Link>
   );

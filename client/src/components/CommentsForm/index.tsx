@@ -59,7 +59,7 @@ const CommentsForm = React.forwardRef<any, ICommentsForProps>(
             handleSendComment();
           }
         }}
-        onFinish={(data) => {
+        onFinish={() => {
           handleSendComment();
         }}
       >

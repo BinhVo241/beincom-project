@@ -7,6 +7,8 @@ import { UserOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Avatar, Button, Dropdown, Layout, message, Tabs, theme } from "antd";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
@@ -41,6 +43,14 @@ const WrapperTab = styled.div`
 
 const Header = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
+  const pathName = usePathname();
+
+  const [activeKey, setActiveKey] = useState(pathName);
+
+  useEffect(() => {
+    router.push(activeKey);
+  }, [activeKey, router]);
 
   return (
     <AntHeader
@@ -69,7 +79,11 @@ const Header = () => {
         <nav className="flex h-full items-end">
           <WrapperTab color={theme.useToken().token.colorIcon}>
             <Tabs
-              defaultActiveKey="/newsfeed"
+              defaultActiveKey={activeKey}
+              activeKey={activeKey}
+              onChange={(path) => {
+                setActiveKey(path);
+              }}
               tabBarGutter={0}
               items={[
                 {
@@ -91,7 +105,7 @@ const Header = () => {
                   ),
                 },
                 {
-                  key: "/communities",
+                  key: "/search",
                   label: (
                     <svg
                       width="24"
@@ -132,7 +146,7 @@ const Header = () => {
           </WrapperTab>
         </nav>
         <div className="flex h-fit w-full">
-          <SearchHeaderForm />
+          <SearchHeaderForm setActiveKey={setActiveKey} />
         </div>
       </div>
       <div className="flex size-full min-w-layout-side-pane max-w-layout-side-pane grow items-center justify-end gap-x-3">

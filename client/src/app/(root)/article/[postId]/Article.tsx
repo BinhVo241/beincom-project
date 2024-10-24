@@ -6,7 +6,7 @@ import Reactions from "@/components/PostItem/Reactions";
 import useGetPost from "@/lib/hooks/useGetPost";
 import { Image, Skeleton } from "antd";
 import { notFound, useParams } from "next/navigation";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 // export interface IArticleProps extends IPosts {
 //   innerRef?: (node?: Element | null | undefined) => void;

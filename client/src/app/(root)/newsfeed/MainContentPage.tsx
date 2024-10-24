@@ -6,18 +6,25 @@ import FirstContent from "./FirstContent";
 import FilterContent from "./FilterContent";
 import Posts from "./Posts";
 
-export interface IMainContentValues {}
+export interface IMainContentValues {
+  searchSide?: boolean;
+}
 
-const MainContentPage: React.FC<IMainContentValues> = ({}) => {
+const MainContentPage: React.FC<IMainContentValues> = ({ searchSide }) => {
   const userName = useSelector((root: RootState) => root.auth.userInfo);
   return (
     <>
-      <FirstContent
-        name={`${userName?.lastName} ${userName?.firstName}`}
-        description="Share new ideas with your community!"
-      />
-      <FilterContent />
-      <Posts />
+      {!searchSide && (
+        <>
+          <FirstContent
+            name={`${userName?.lastName} ${userName?.firstName}`}
+            description="Share new ideas with your community!"
+          />
+          <FilterContent />
+        </>
+      )}
+
+      <Posts filter={searchSide} />
     </>
   );
 };

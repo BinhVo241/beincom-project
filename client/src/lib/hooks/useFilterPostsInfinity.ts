@@ -9,38 +9,9 @@ import {
 } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 
-export interface IPosts {
-  author?: {
-    id: number | string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    createdAt: Date;
-    updatedAt: Date;
-  };
-  verified: boolean;
-  title: string;
-  description: string;
-  paragraph: string;
-  authorId: number;
-  createdAt: any;
-  updatedAt: any;
-  id: number | string;
-  avatar: string;
-  readTime: any;
-  reactions?: {
-    likes: number;
-    comments: number;
-    views: number;
-    shares: number;
-  };
-  group: Array<{ title: string; postId: number }>;
-  userId: number | string;
-  picture: any;
-}
-
-const usePostsInfinity = (
+const useFilterPostsInfinity = (
   filter?: boolean,
+  content?: any,
   options?: UseInfiniteQueryOptions<any, any>
 ) => {
   const { ref, inView } = useInView();
@@ -52,16 +23,20 @@ const usePostsInfinity = (
     hasNextPage,
     isFetchingNextPage,
     status,
+    refetch,
   } = useInfiniteQuery({
-    queryKey: queryKey.LIST_POST_INFINITY,
+    queryKey: queryKey.LIST_POST_FILTER,
     initialPageParam: 1,
-    queryFn: ({ pageParam }) => apiRequest.getPosts(pageParam),
+    queryFn: ({ pageParam }) => {
+      if (!content) return apiRequest.getPosts(pageParam);
+      return apiRequest.getFilterPosts(content, pageParam);
+    },
     getNextPageParam: (lastPage, allPages) => {
       const nextPage =
         lastPage.length === DEFAULT_PAGESIZE ? allPages.length + 1 : undefined;
       return nextPage;
     },
-    enabled: !filter,
+    enabled: filter,
     ...options,
   });
 
@@ -74,7 +49,8 @@ const usePostsInfinity = (
     status,
     ref,
     inView,
+    refetch,
   };
 };
 
-export default usePostsInfinity;
+export default useFilterPostsInfinity;
