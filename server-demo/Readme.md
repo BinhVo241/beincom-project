@@ -1,0 +1,3 @@
+SECRET_KEY = 'json-server-auth-123456'
+JWT_EXPIRES_IN = '1h'
+MIN_PASSWORD_LENGTH = 4

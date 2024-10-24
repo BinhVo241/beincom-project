@@ -1,0 +1,121 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bic-white: 255 255 255;
+  --bic-gray-1: 242 245 248;
+  --bic-gray-5: 234 237 242;
+  --bic-gray-10: 221 223 228;
+  --bic-gray-20: 209 212 219;
+  --bic-gray-30: 186 190 201;
+  --bic-gray-40: 164 169 183;
+  --bic-gray-50: 118 125 147;
+  --bic-gray-60: 81 86 103;
+  --bic-gray-70: 63 67 80;
+  --bic-gray-80: 45 48 57;
+  --bic-gray-90: 27 29 34;
+  --bic-red-1: 251 241 241;
+  --bic-red-2: 255 221 214;
+  --bic-red-5: 255 205 195;
+  --bic-red-10: 255 155 136;
+  --bic-red-20: 255 124 101;
+  --bic-red-30: 247 92 70;
+  --bic-red-40: 234 56 41;
+  --bic-red-50: 211 21 16;
+  --bic-red-60: 180 0 0;
+  --bic-neutral-1: 248 248 251;
+  --bic-neutral-2: 236 238 246;
+  --bic-neutral-5: 214 217 235;
+  --bic-neutral-10: 179 185 218;
+  --bic-neutral-20: 144 153 202;
+  --bic-neutral-30: 110 121 185;
+  --bic-neutral-40: 68 79 142;
+  --bic-neutral-50: 57 67 119;
+  --bic-neutral-60: 46 54 96;
+  --bic-neutral-70: 35 41 73;
+  --bic-neutral-80: 24 28 50;
+  --bic-neutral-90: 7 9 16;
+  --bic-green-1: 243 254 244;
+  --bic-green-2: 205 252 191;
+  --bic-green-5: 174 246 157;
+  --bic-green-10: 150 238 133;
+  --bic-green-20: 114 224 106;
+  --bic-green-30: 78 207 80;
+  --bic-green-40: 39 187 54;
+  --bic-green-50: 7 167 33;
+  --bic-green-60: 0 124 15;
+  --bic-blue-1: 231 240 255;
+  --bic-blue-2: 214 229 253;
+  --bic-blue-5: 181 208 252;
+  --bic-blue-10: 148 188 251;
+  --bic-blue-20: 115 167 250;
+  --bic-blue-30: 83 147 248;
+  --bic-blue-40: 50 126 247;
+  --bic-blue-50: 9 97 237;
+  --bic-blue-60: 7 77 188;
+  --bic-purple-1: 251 248 255;
+  --bic-purple-2: 244 239 251;
+  --bic-purple-5: 218 201 240;
+  --bic-purple-10: 200 174 233;
+  --bic-purple-20: 173 134 222;
+  --bic-purple-30: 155 107 215;
+  --bic-purple-40: 128 67 204;
+  --bic-purple-50: 111 50 187;
+  --bic-purple-60: 95 43 160;
+  --bic-purple-70: 79 36 133;
+  --bic-orange-1: 255 236 204;
+  --bic-orange-2: 255 223 173;
+  --bic-orange-5: 253 210 145;
+  --bic-orange-10: 246 133 17;
+  --bic-orange-20: 228 111 0;
+  --bic-orange-30: 203 93 0;
+  --bic-orange-40: 149 61 0;
+  --bic-orange-50: 122 47 0;
+  --bic-orange-60: 73 25 1;
+  --bic-font-size-tiny: 10px;
+  --bic-line-height-tiny: 15px;
+  --bic-font-size-xs: 12px;
+  --bic-line-height-xs: 18px;
+  --bic-font-size-sm: 14px;
+  --bic-line-height-sm: 21px;
+  --bic-font-size-base: 16px;
+  --bic-line-height-base: 24px;
+  --bic-font-size-lg: 18px;
+  --bic-line-height-lg: 27px;
+  --bic-font-size-xl: 20px;
+  --bic-line-height-xl: 30px;
+  --bic-font-size-2xl: 24px;
+  --bic-line-height-2xl: 36px;
+  --bic-font-size-3xl: 28px;
+  --bic-line-height-3xl: 36px;
+  --bic-font-size-4xl: 32px;
+  --bic-line-height-4xl: 42px;
+  --bic-font-size-5xl: 40px;
+  --bic-line-height-5xl: 52px;
+  --global-header-height: 3.75rem
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadow-card-auth {
+  --tw-shadow: 0px 2px 32px 0px rgba(24, 0, 72, .2);
+  --tw-shadow-colored: 0px 2px 32px 0px var(--tw-shadow-color);
+  box-shadow: var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-1 {
+  --tw-shadow: 0px 1px 2px 0 rgba(0, 0, 0, .05), 0px 1px 2px -1px rgba(0, 0, 0, .1);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.my-2 {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.-z-1 {
+  z-index: -1;
+}
